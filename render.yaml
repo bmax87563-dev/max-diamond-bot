@@ -1,1 +1,7 @@
-
+services:
+  - type: worker
+    name: max-diamond-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
