@@ -1,7 +1,7 @@
 services:
   - type: web
     name: max-diamond-bot
-    env: node
+    env: python
     plan: free
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
