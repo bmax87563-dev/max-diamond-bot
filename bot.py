@@ -26,7 +26,6 @@ def welcome_new_members(message):
             f"🆔 User ID - {user.id}\n"
             f"ℹ️ User Name - {username}"
         )
-
         bot.send_message(message.chat.id, text)
 
 
@@ -42,9 +41,8 @@ def goodbye_member(message):
         f"🆔 User ID - {user.id}\n"
         f"ℹ️ User Name - {username}"
     )
-
     bot.send_message(message.chat.id, text)
 
 
 print("Bot running...")
-bot.infinity_polling(skip_pending=True, timeout=60, long_polling_timeout=60)။
+bot.infinity_polling(skip_pending=True, timeout=60, long_polling_timeout=60)
