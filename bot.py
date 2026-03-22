@@ -1,3 +1,20 @@
 import os
-TOKEN = os.getenv("BOT_TOKEN")
-print(TOKEN)
+import telebot
+
+TOKEN = os.getenv("8672437595:AAEO6uCzMIbY1QKZGPKb8Pwj7dSMXOOrlB4")
+
+if not TOKEN:
+    raise RuntimeError("8672437595:AAEO6uCzMIbY1QKZGPKb8Pwj7dSMXOOrlB4 )
+
+bot = telebot.TeleBot(TOKEN)
+
+@bot.message_handler(commands=["start"])
+def start(message):
+    bot.reply_to(message, "Bot အလုပ်လုပ်နေပြီ ✅")
+
+@bot.message_handler(func=lambda message: True)
+def echo_all(message):
+    bot.reply_to(message, f"နင်ရေးတာ: {message.text}")
+
+print("Bot started...")
+bot.infinity_polling(skip_pending=True, timeout=60, long_polling_timeout=60)
